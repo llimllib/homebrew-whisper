@@ -9,11 +9,10 @@ class Libwhisper < Formula
 
   def install
     ENV["WHISPER_OPENBLAS"] = "1"
-    system "make", "-j", "libwhisper.a"
-    system "make", "-j", "libwhisper.so"
+    system "make", "-j", "libwhisper.a", "libwhisper.so"
     lib.install "libwhisper.a"
     lib.install "libwhisper.so"
-    include.install "whisper.h"
+    include.install Dir["*.h"]
   end
 
   test do
