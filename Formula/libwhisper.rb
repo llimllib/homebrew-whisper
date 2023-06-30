@@ -27,6 +27,7 @@ class Libwhisper < Formula
 
     system ENV.cc, "test.c", "-I#{include}", "-L#{lib}", "-lwhisper", "-o", "test"
     output = shell_output("./test")
-    assert_equal "AVX = 0 | AVX2 = 0 | AVX512 = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | VSX = 0 | COREML = 0 | ", output
+    assert_equal "AVX = 0 | AVX2 = 0 | AVX512 = 0 | FMA = 0 | NEON = 1 | ARM_FMA = 1 | F16C = 0 | " \
+                 "FP16_VA = 1 | WASM_SIMD = 0 | BLAS = 1 | SSE3 = 0 | VSX = 0 | COREML = 0 | ", output
   end
 end
